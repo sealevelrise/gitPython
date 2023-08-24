@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="png">
+    <file>res/image/g02_can_box_green.png</file>
+    <file>res/image/g03_can_box_red.png</file>
+    <file>res/image/menu_btn_press.png</file>
+    <file>res/image/Blue_Buttons_Round_Edge_small.png</file>
+    <file>res/image/compass.png</file>
+  </qresource>
+</RCC>
