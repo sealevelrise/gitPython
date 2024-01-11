@@ -46,23 +46,23 @@ class main(QMainWindow,Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.chart = QChart()  # 创建 Chart
-        self.chart.setTitle("数据曲线")
+        self.chart = QChart()  # Create Chart
+        self.chart.setTitle("Data curve")
         self.graphicsView.setChart(self.chart)
 
 
         self.axisX = QValueAxis()
-        self.axisX.setRange(200, 500)  # 设置坐标轴范围
-        self.axisX.setLabelFormat("%d")  # 标签格式
-        self.axisX.setTickCount(5)  # 主分隔个数
+        self.axisX.setRange(200, 500)  # Setup
+        self.axisX.setLabelFormat("%d")  # Flag
+        self.axisX.setTickCount(5)  # Main
         #axisX.setMinorTickCount(4)
-        self.axisX.setTitleText("x")  # 标题
+        self.axisX.setTitleText("x")  # Title
         # axisX.setGridLineVisible(True)
         self.axisX.setMinorGridLineVisible(False)
 
         self.axisY = QValueAxis()
         self.axisY.setRange(50, 200)
-        self.axisY.setLabelFormat("%d")  # 标签格式
+        self.axisY.setLabelFormat("%d")  # Tag
         self.axisY.setTickCount(4)
         #axisY.setMinorTickCount(4)
         self.axisY.setTitleText("y")
@@ -74,14 +74,14 @@ class main(QMainWindow,Ui_MainWindow):
 
         self.seriesS = QScatterSeries()
         self.seriesL = QLineSeries()
-        self.seriesS.setName("坐标点")
-        self.seriesL.setName("拟合直线")
+        self.seriesS.setName("Coordinate points")
+        self.seriesL.setName("fitting line")
         self.chart.addSeries(self.seriesS)
         self.chart.addSeries(self.seriesL)
-        self.chart.setAxisX(self.axisX, self.seriesS)  # 为序列设置坐标轴
+        self.chart.setAxisX(self.axisX, self.seriesS)  # 
         self.chart.setAxisY(self.axisY, self.seriesS)
 
-        self.chart.setAxisX(self.axisX, self.seriesL)  # 为序列设置坐标轴
+        self.chart.setAxisX(self.axisX, self.seriesL)  # 
         self.chart.setAxisY(self.axisY, self.seriesL)
 
     def jisuan(self):
@@ -108,7 +108,7 @@ class main(QMainWindow,Ui_MainWindow):
         self.chart.addSeries(self.seriesL)
         self.lineEdit.setText('0')
 
-    #@QtCore.Slot()#修饰一下，表明这是个槽函数
+    #@QtCore.Slot()#
     def slot1(self):
         print_hi('Draw Chart')
         self.label.setText('Draw Chart')
@@ -140,5 +140,3 @@ if __name__ == "__main__":
     wind.show()
     print_hi('windows exit')
     sys.exit(app.exec_())
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
