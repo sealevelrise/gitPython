@@ -17,16 +17,16 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
+    QMainWindow, QMenu, QMenuBar, QPushButton,
+    QSizePolicy, QStatusBar, QWidget)
 import image_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1024, 768)
         MainWindow.setStyleSheet(u"color: rgb(0, 60, 69);\n"
 "background-color: rgb(173, 219, 227);")
         self.actionQuit = QAction(MainWindow)
@@ -41,11 +41,12 @@ class Ui_MainWindow(object):
         self.pushButton.setStyleSheet(u"border-image: url(:/png/res/image/Blue_Buttons_Round_Edge_small.png);")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(330, 30, 81, 16))
+        self.label.setGeometry(QRect(270, 30, 81, 16))
         self.graphicsView = QChartView(self.centralwidget)
         self.graphicsView.setObjectName(u"graphicsView")
-        self.graphicsView.setGeometry(QRect(260, 60, 471, 351))
+        self.graphicsView.setGeometry(QRect(260, 60, 751, 511))
         self.graphicsView.setStyleSheet(u"background-color: rgb(0, 170, 144);")
+        self.graphicsView.setFrameShadow(QFrame.Plain)
         self.pushButton_2 = QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(60, 130, 141, 41))
@@ -58,12 +59,12 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(600, 30, 133, 21))
         font = QFont()
-        font.setFamilies([u"\u9ed1\u4f53"])
+        font.setFamilies([u"Arial"])
         font.setPointSize(10)
         self.lineEdit.setFont(font)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(530, 30, 61, 21))
+        self.label_3.setGeometry(QRect(500, 30, 91, 21))
         self.label_3.setFont(font)
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
@@ -78,7 +79,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1024, 21))
         self.menuFIle = QMenu(self.menubar)
         self.menuFIle.setObjectName(u"menuFIle")
         self.menu = QMenu(self.menubar)
@@ -105,16 +106,16 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"Quit", None))
-        self.action.setText(QCoreApplication.translate("MainWindow", u"\u5173\u4e8e", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u7ed8\u5236\u66f2\u7ebf", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Hello pyside\uff01", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u9664", None))
+        self.action.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Draw a curve", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Hello", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.label_2.setText("")
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"360.00", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5f53\u524d\u8f6c\u901f", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Current speed", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.menuFIle.setTitle(QCoreApplication.translate("MainWindow", u"FIle", None))
-        self.menu.setTitle(QCoreApplication.translate("MainWindow", u"\u5e2e\u52a9", None))
+        self.menu.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi
 
